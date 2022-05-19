@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.7</title>
+</head>
+
+<body>
+    <form>
+        Enter the number:
+        <input type="text" id="text" value="">
+
+        <br><br>
+
+        <input type="button" value="Check" onClick="x()">
+        <br><br>
+        <span id="print"></span>
+    </form>
+    <!-- using callback function -->
+    <script>
+        n = document.getElementById("text").vlaue;
+
+        function x() {
+            
+            
+                for (let i = 2; i <= n; i++) {
+                    if (n % i == 0) {
+                        document.getElementById("print").innerHTML = (n + "is not a prime number")
+
+                    } else {
+                        document.getElementById("print").innerHTML = (n + "is a prime number")
+
+                    }
+                }
+            }
+        
+
+
+    </script>
+</body>
+
+</html>

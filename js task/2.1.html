@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title> 2.1</title>
+</head>
+
+<body>
+    <form>
+        Enter the number:
+        <input type="text" id="text" value="">
+
+        <br><br>
+
+        <input type="button" value="Check" onClick="isPalindrome()">
+        <br><br>
+        <span id="print"></span>
+    </form>
+
+    <!-- Using arrow function -->
+    <script>
+
+        var name = document.getElementById("text").value;
+        const isPalindrome = name => {
+            const midPoint = name.length / 2;
+            for (let i = 0; i < midPoint && i < name.length; i++) {
+                if (name[i] != name[name.length - 1 - i]) {
+                    document.getElementById("print").innerHTML = (" Not Palindrome");
+                    return false;
+                }
+            }
+            document.getElementById("print").innerHTML = ("Palindrome");
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>

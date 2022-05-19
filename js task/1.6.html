@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.6</title>
+</head>
+
+<body>
+    <form>
+        Enter the number:
+        <input type="text" id="text" value="">
+
+        <br><br>
+
+        <input type="button" value="Check" onClick="p()">
+        <br><br>
+        <span id="print"></span>
+    </form>
+    <!-- with return value no argument -->
+    <script>
+        function p() {
+            let flag = true;
+            let n = document.getElementById("text").value;
+            for (let i = 2; i <= n - 1; i++) {
+                if (n % i == 0) {
+                    flag = false;
+
+                }
+            }
+
+            
+            if (flag == true) {
+                document.getElementById("print").innerHTML = ("this is a prime number");
+                return true;
+            } else {
+                document.getElementById("print").innerHTML = ("this is not a prime number");
+                return false;
+            }
+        } 
+    </script>
+
+</body>
+
+</html>

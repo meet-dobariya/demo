@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong number</title>
+    <script>
+        function meet() {
+            let number = document.getElementById('user').value;
+            let Result = document.getElementById('print');
+            let num1 = /^[0-9]+$/;
+            let isValid = num1.test(number);
+            if (number == "") {
+                document.getElementById('err').innerText = "please enter number"
+            }
+            else if(!isValid){
+                document.getElementById('err').innerText = "please enter valid number";
+            }
+            else {
+                document.getElementById('err').innerText = "";
+                //1.armstorg with no arg no return:...........................
+                if (document.getElementById('p1').checked == true) {
+                    function armstrong() {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number) {
+                            Result.innerHTML = (`${number} is Armstrong `);
+                        }
+                        else {
+                            Result.innerHTML = (`${number} is not  Armstrong `);
+                        }
+                    }
+                    armstrong();
+                }
+
+                //2. armstorg with  arg no return:..............................
+
+                else if (document.getElementById('p2').checked == true) {
+                    function armstrong(number) {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number) {
+                            Result.innerHTML = (`${number} is  Armstrong`);
+                        }
+                        else {
+                            Result.innerHTML = (`${number} is not Armstrong`);
+                        }
+                    }
+                    armstrong(number);
+                }
+
+                //3. armstorg with  arg with return:................................
+                else if (document.getElementById('p3').checked == true) {
+                    function armstrong(number) {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            return (`${number} is  Armstrong `);
+                        else
+                            return (`${number} is not  Armstrong `);
+                    }
+                    const checkAs = armstrong(number);
+                    Result.innerHTML = checkAs;
+                }
+
+                //    3.3 armstorg with no arg with return:............................
+
+                else if (document.getElementById('p4').checked == true) {
+                    function armstrong() {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            return (`${number} is  Armstrong `);
+                        else
+                            return (`${number} is not Armstrong `);
+                    }
+                    const checkAs = armstrong(6);
+                    Result.innerHTML = checkAs;
+                }
+
+                // 5 armstorg with function expression:..............................
+
+                else if (document.getElementById('p5').checked == true) {
+                    const checkAs = function () {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            return (`${number} is Armstrong `);
+                        else
+                            return (`${number} is not Armstrong `);
+                    }
+                    Result.innerHTML = checkAs();
+                }
+
+                //6. armstorg with arrow function :..............................
+
+                else if (document.getElementById('p6').checked == true) {
+                    const checkAs = () => {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            return (`${number} is Armstrong`);
+                        else
+                            return (`${number} is not Armstrong `);
+                    }
+                    Result.innerHTML = checkAs();
+                }
+
+                // 7. armstorg with callback function :..............................
+                else if (document.getElementById('p7').checked == true) {
+                    function armstrong(value, isArmstrong, isnotArmstrong) {
+                        check(value) ? isArmstrong() : isnotArmstrong();
+                    }
+                    function isArmstrong() {
+                        Result.innerHTML = (`${number} is armstrong`);
+                    }
+                    function isnotArmstrong() {
+                        Result.innerHTML = (`${number} is not armstrong`);
+                    }
+
+                    function check(number) {
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            return true
+                        else
+                            return false
+                    }
+
+                    armstrong(number, isArmstrong, isnotArmstrong);
+                }
+
+                //8.using promise.............................
+                else if (document.getElementById('p8').checked == true) {
+                    let promise = new Promise(function (resolve, reject) {
+
+                        const numberOfDigits = number.length;
+                        let sum = 0;
+                        let temp = number;
+                        while (temp > 0) {
+                            let rem = temp % 10;
+                            sum += rem ** numberOfDigits;
+                            temp = parseInt(temp / 10);
+                        }
+                        if (sum == number)
+                            resolve();
+                        else
+                            reject();
+                    })
+                    promise.then(function () {
+                        Result.innerHTML = (`${number} is armstrong`);
+                    }).catch(function () {
+                        Result.innerHTML = (`${number} is not armstrong `);
+                    })
+
+                }
+            }
+        }
+    </script>
+   
+</head>
+
+<body>
+   
+    <table border="1">
+        <tr>
+            <td><b>Enter number:</b></td>
+            <td><input type="test" id="user"></td>
+        </tr>
+        <tr>
+            <td><b> no argument no return value</b></td>
+            <td><input type="radio" name="ch" id="p1"></td>
+        </tr>
+        <tr>
+            <td><b>with argument no return value</b></td>
+            <td><input type="radio" name="ch" id="p2"></td>
+        </tr>
+        <tr>
+            <td><b>with argument with return value</b></td>
+            <td><input type="radio" name="ch" id="p3"></td>
+        </tr>
+        <tr>
+            <td><b>no argument with return value</b></td>
+            <td><input type="radio" name="ch" id="p4"></td>
+        </tr>
+        <tr>
+            <td><b>function expression</b></td>
+            <td><input type="radio" name="ch" id="p5"></td>
+        </tr>
+        <tr>
+            <td><b>arrow function</b></td>
+            <td><input type="radio" name="ch" id="p6"></td>
+        </tr>
+        <tr>
+            <td><b>callback function</b></td>
+            <td><input type="radio" name="ch" id="p7"></td>
+        </tr>
+        <tr>
+            <td><b>promise</b></td>
+            <td><input type="radio" name="ch" id="p8"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="show result" id="res" onclick="meet()"></td>
+            <td><p id="print"></p></td>
+        </tr>
+    </table>
+    <p id="err"></p>
+    </div>
+</body>
+
+</html>
