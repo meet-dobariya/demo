@@ -1,0 +1,539 @@
+﻿@model IEnumerable<core_passport5.Models.passport>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.fnum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Applyingfor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ifreissue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ifchange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.txt1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.toa14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.topb15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vr16)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sign)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.anm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ali22)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnm23)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dob24)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pob25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dt25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.st25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reg25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gen26)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mst27)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.czn28)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pan29)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vt210)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emp211)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.onm212)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pnt213)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edu214)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cat215)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vdm216)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.an217)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fnm31)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mnm32)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lnm33)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.snm34)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fpn35)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fnt35)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mpn35)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mnt35)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.st41)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ct42)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dt43)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.plcstn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.st44)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pin45)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eml46)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mob47)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tel48)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isadd42)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mail12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passno61)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doi62)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doe63)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.poi64)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isapp62)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filenumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.monthandyear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.poffice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f711)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f712)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f713)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f714)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f715)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f716)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f717)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f718)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f719)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f720)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f721)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f722)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f723)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f724)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f725)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ddnum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.issuedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expirydate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bankname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.branchname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ec1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.todaydate)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.sign2)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fnum)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.Applyingfor)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.ifreissue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ifchange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.txt1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.toa14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topb15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vr16)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sign)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.anm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ali22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnm23)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob24)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pob25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dt25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reg25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gen26)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mst27)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.czn28)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pan29)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vt210)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp211)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.onm212)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pnt213)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edu214)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cat215)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vdm216)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.an217)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fnm31)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mnm32)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lnm33)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.snm34)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fpn35)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fnt35)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mpn35)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mnt35)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st41)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ct42)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dt43)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plcstn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st44)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pin45)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eml46)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mob47)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tel48)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isadd42)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passno61)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doi62)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doe63)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poi64)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isapp62)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filenumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monthandyear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poffice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f711)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f712)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f713)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f714)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f715)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f716)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f717)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f718)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f719)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f720)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f721)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f722)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f723)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f724)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f725)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ddnum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.issuedate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expirydate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bankname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branchname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ec1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.todaydate)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.sign2)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.fnum">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.fnum">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.fnum">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
